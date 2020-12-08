@@ -1,11 +1,12 @@
 <?php
+//include '../controllers/userControllers.php';
+include '../controllers/userControllers.php';
 ?>
 
 <!doctype>
 <html>
 <head>
     <title></title>
-    <script src="../controllers/userValidate.js"></script>
 </head>
 <body>
 <p id='1'></p>
@@ -14,7 +15,7 @@
     document.getElementById('1').innerHTML= 1 + 6;
 </script>
 -->
-<form name="registration" action="../controllers/userValidate.js" method="post" onsubmit="userValidate()">
+<form name="registration" action="" method="post"> <!-- onsubmit="return userRegistrationValidate()"-->
     <table align="center">
         <tr>
             <td align="right">Name:</td>
@@ -65,10 +66,13 @@
         </tr>
         <tr align="center">
             <td colspan="2">
-                <input type="submit" value="Register">
+                <input name="register" type="submit" value="Register">
             </td>
         </tr>
     </table>
+</form>
+    <script src="../controllers/userValidate.js"></script>
+
     <br><br>
 </body>
 </html>
