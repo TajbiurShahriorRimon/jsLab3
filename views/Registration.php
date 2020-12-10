@@ -15,7 +15,7 @@ include '../controllers/userControllers.php';
     document.getElementById('1').innerHTML= 1 + 6;
 </script>
 -->
-<form name="registration" action="" method="post"> <!-- onsubmit="return userRegistrationValidate()"-->
+<form name="registrationForm" action="" method="post" onsubmit="return userRegistrationValidate()">
     <table align="center">
         <tr>
             <td align="right">Name:</td>

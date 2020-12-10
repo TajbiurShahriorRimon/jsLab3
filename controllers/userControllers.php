@@ -11,8 +11,8 @@ if(isset($_POST['login'])){
 
     $db = new DataBase();
     $db->dbCon();
-    //$sig = $db->searchUsers($username, $pass);
-    $sig = $db->searchUsers($username, $encPass);
+    $sig = $db->searchUsers($username, $pass);
+    //$sig = $db->searchUsers($username, $encPass);
     if($sig == 1){
         header('Location: views/dashboard.php');
     }

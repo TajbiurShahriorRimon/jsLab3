@@ -3,98 +3,95 @@ function getElement(id){
 }
 
 function userLoginValidate(){
+    //alert("hello ");
     refresh();
     var has_err=false;
-    var username=getElement("username");
-    var password=getElement("pass");
+    /*var username=getElement("username");
+    var password=getElement("pass");*/
     var err_username=getElement("err_username");
     var err_password=getElement("err_pass");
-    if(username.value==""){
+
+    var username = document.forms["loginForm"]["username"].value;
+    //alert(username);
+    var password = document.forms["loginForm"]["pass"].value;
+
+    if(username == ""){
+        alert("empty username");
         has_err=true;
         err_username.innerHTML="Username cannot be empty";
         err_username.focus();
+        return false;
     }
-    if(password.value==""){
+    else {
+        alert(username);
+        return true;
+    }
+    if(password == ""){
+        alert("empty password");
         has_err=true;
         err_password.innerHTML="Password cannot be empty";
         err_password.focus();
+        return false;
+    }
+    else {
+        alert(password);
+        return true;
     }
 
     return !has_err;
 }
 
+function getElement(id){
+    return document.getElementById(id);
+}
 function userRegistrationValidate(){
-    var phone = getElement("phone");
-    //alert(phone);
-    //refresh();
-    document.writeln('dsef');
-    /*var name = document.forms["registration"]["name"];
-    var username = document.forms["registration"]["username"];
-    var password = document.forms["registration"]["pass"];
-    var email = document.forms["registration"]["email"];
-    var phone = document.forms["registration"]["phone"];*/
+    refresh();
+    var hasErr=false;
+    var e_name = getElement("name");
+    var e_email = getElement("email");
+    var e_username = getElement("username");
+    var e_password = getElement("pass");
+    var e_phone = getElement("phone");
 
-    var name = getElement("name");
-    var email = getElement("email");
-    var username = getElement("username");
-    var password = getElement("pass");
-    var phone = getElement("phone");
-
+    var err_password = getElement("err_pass");
     var err_name = getElement("err_name");
     var err_email = getElement("err_email");
     var err_username = getElement("err_username");
-    var err_password = getElement("err_pass");
     var err_phone = getElement("err_phone");
 
-    //console.log("yhfgtd");
-    document.writeln("uillu");
-    document.writeln(phone);
-    alert('efaf');
-
-    var has_err = false;
-
-    if(name.value == ""){
+    if(e_name.value == ""){
         hasErr= true;
-        err_name.innerHTML = "Name Required";
-        name.focus();
-        //return !hasErr;
-        return false;
+        err_name.innerHTML = "Username Required";
+        e_name.focus();
+        return !hasErr;
     }
-    if(name.value != ""){
-        if(name.search("1") && name.search("2") && name.search("3") && name.search("4")){
-            hasErr= true;
-            err_name.innerHTML = "Name cannot contain value/number";
-            name.focus();
-        }
+    if(e_email.value == ""){
+        hasErr= true;
+        err_email.innerHTML = "Email Required";
+        e_email.focus();
+        return !hasErr;
     }
-    if (username == "") {
-        alert("username must be filled out");
-        has_err = true;
-        return false;
+    if(e_username.value == ""){
+        hasErr= true;
+        err_username.innerHTML = "Username Required";
+        e_username.focus();
+        return !hasErr;
     }
-    if (password == "") {
-        document.write("password must be filled out");
-        has_err = true;
-        return false;
-    }
-    if (email == "") {
-        document.write("email must be filled out");
-        has_err = true;
-        return false;
-    }
-    if (phone == "") {
-        document.write("phone must be filled out");
-        has_err = true;
-        return false;
-    }
-    if(!has_err){
-        document.write('done!!!');
-        return false;
-    }
-    return false;
+    return !hasErr;
+
+}
+function refresh(){
+    var err_name = getElement("err_name");
+    var err_email = getElement("err_email");
+    var err_username = getElement("err_username");
+
+    err_name.innerHTML = "";
+    err_email.innerHTML = "";
+    err_username.innerHTML = "";
+
 }
 
-function refresh(){
+/*function refresh(){
     var err_name = getElement("err_name");
     var err_email = getElement("err_email");
     var err_username = getElement("err_username");
@@ -107,4 +104,4 @@ function refresh(){
     err_phone.innerHTML = "";
     err_password.innerHTML = "";
 
-}
+}*/
